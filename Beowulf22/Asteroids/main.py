@@ -12,6 +12,7 @@ def main():
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     clock = pygame.time.Clock()
     dt = 0
+    highscore = 0
 
     print("Starting Asteroids with pygame version: (%s)" %  pygame.version.ver)
     print(f"Screen width: {SCREEN_WIDTH}")
@@ -51,7 +52,7 @@ def main():
             for shot in shots:
                 if shot.collides_with(asteroid) == True:
                     log_event("asteroid_shot")
-                    asteroid.split()
+                    highscore += asteroid.split()
                     shot.kill()
 
 
